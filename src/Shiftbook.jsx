@@ -483,7 +483,7 @@ export default function Shiftbook() {
 
           <div className="grid grid-cols-7 gap-1 md:gap-2">
             {calendarCells.map((cell) => {
-              if (cell.empty) return <div key={cell.key} className="aspect-[3/5] md:aspect-[4/5]" />;
+              if (cell.empty) return <div key={cell.key} className="aspect-[1/2] md:aspect-[4/5]" />;
               const { day, key, dayData, dayOfWeek, isToday, holiday, isWeekend } = cell;
               const shifts = dayData?.shifts || [];
               const hasNote = !!dayData?.note;
@@ -492,7 +492,7 @@ export default function Shiftbook() {
                 <button
                   key={key}
                   onClick={() => openDay(day)}
-                  className={`relative aspect-[3/5] md:aspect-[4/5] p-1 md:p-2 rounded-2xl text-left transition-[transform,box-shadow,border-color,background-color] duration-200 active:scale-[0.96] group border ${
+                  className={`relative aspect-[1/2] md:aspect-[4/5] p-1 md:p-2 rounded-2xl text-left transition-[transform,box-shadow,border-color,background-color] duration-200 active:scale-[0.96] group border ${
                     isToday ? 'border-pink-300' : holiday ? 'border-pink-100/60' : 'border-white'
                   } hover:shadow-md hover:-translate-y-0.5 hover:border-pink-200`}
                   style={{
@@ -534,8 +534,8 @@ export default function Shiftbook() {
                       const bgColor = getShiftColor(shift);
                       const textColor = getTextColor(bgColor);
                       return (
-                        <div key={idx} className="text-[10px] md:text-xs px-1.5 md:px-2 py-0 md:py-[3px] rounded-xl md:rounded-lg leading-none md:leading-tight truncate"
-                          style={{ backgroundColor: bgColor, color: textColor, fontWeight: 600, lineHeight: '1.6' }}>
+                        <div key={idx} className="text-[10px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-[3px] rounded-xl md:rounded-lg break-words"
+                          style={{ backgroundColor: bgColor, color: textColor, fontWeight: 600, lineHeight: 1.4 }}>
                           {shift.name}
                         </div>
                       );
