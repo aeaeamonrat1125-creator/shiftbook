@@ -534,8 +534,8 @@ export default function Shiftbook() {
                       const bgColor = getShiftColor(shift);
                       const textColor = getTextColor(bgColor);
                       return (
-                        <div key={idx} className="text-[10px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-[3px] rounded-xl md:rounded-lg break-words"
-                          style={{ backgroundColor: bgColor, color: textColor, fontWeight: 600, lineHeight: 1.4 }}>
+                        <div key={idx} className="text-[9px] md:text-xs px-1 md:px-2 py-0.5 md:py-[3px] rounded-lg md:rounded-lg whitespace-nowrap overflow-hidden"
+                          style={{ backgroundColor: bgColor, color: textColor, fontWeight: 700, lineHeight: 1.5 }}>
                           {shift.name}
                         </div>
                       );
